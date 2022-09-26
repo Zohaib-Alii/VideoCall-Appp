@@ -25,18 +25,37 @@ function App() {
   const connectionRef = useRef();
 
   useEffect(() => {
+    debugger;
+    // const constraints = {
+    //   video: true,
+    //   audio: true,
+    // };
+    // navigator.mediaDevices
+    //   .getUserMedia(constraints)
+    //   .then((stream) => {
+    //     console.log("Got MediaStream:", stream);
+    //     setStream(stream);
+    //     debugger;
+    //     myVideo.current.srcObject = stream;
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error accessing media devices.", error);
+    //   });
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
         setStream(stream);
+        debugger;
         myVideo.current.srcObject = stream;
       });
 
     socket.on("me", (id) => {
+      debugger;
       setMe(id);
     });
 
     socket.on("callUser", (data) => {
+      debugger;
       setReceivingCall(true);
       setCaller(data.from);
       setName(data.name);
@@ -52,7 +71,8 @@ function App() {
     });
     peer.on("signal", (data) => {
       socket.emit("callUser", {
-        userToCall: id,
+        // userToCall: id,
+        userToCall: me,
         signalData: data,
         from: me,
         name: name,
@@ -93,10 +113,8 @@ function App() {
   };
 
   return (
-    <>
-      <h1 style={{ textAlign: "center", color: "#fff" }}>
-        Zohaib Video calling Services
-      </h1>
+    <main>
+      <h1 style={{ textAlign: "center", color: "#fff" }}>Video calling</h1>
       <div className="container">
         <div className="video-container">
           <div className="video">
@@ -122,7 +140,7 @@ function App() {
           </div>
         </div>
         <div className="myId">
-          <TextField
+          {/*<TextField
             id="filled-basic"
             label="Name"
             variant="filled"
@@ -146,7 +164,7 @@ function App() {
             variant="filled"
             value={idToCall}
             onChange={(e) => setIdToCall(e.target.value)}
-          />
+          />*/}
           <div className="call-button">
             {callAccepted && !callEnded ? (
               <Button variant="contained" color="secondary" onClick={leaveCall}>
@@ -175,7 +193,7 @@ function App() {
           ) : null}
         </div>
       </div>
-    </>
+    </main>
   );
 }
 
