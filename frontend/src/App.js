@@ -124,7 +124,7 @@ function App() {
                 muted
                 ref={myVideo}
                 autoPlay
-                style={{ width: "300px" }}
+                style={{ width: "310px" }}
               />
             )}
           </div>
