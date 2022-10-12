@@ -92,7 +92,7 @@ function App() {
 
   const leaveCall = () => {
     setCallEnded(true);
-    console.log("leave status check ");
+    console.log("leave status check testing for ");
     connectionRef.current.destroy();
   };
   return (
