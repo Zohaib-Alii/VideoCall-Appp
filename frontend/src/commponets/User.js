@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 
 import PhoneIcon from "@material-ui/icons/Phone";
 
 const User = ({ callAccepted, callEnded, userVideo, leaveCall, callUser }) => {
+  console.log(callAccepted, callEnded);
+
   return (
     <main>
       <h1 style={{ textAlign: "center", color: "#fff" }}>User calling</h1>
