@@ -7,9 +7,6 @@ import PhoneIcon from "@material-ui/icons/Phone";
 const User = ({ callAccepted, callEnded, userVideo, leaveCall, callUser }) => {
   console.log(callAccepted, callEnded, userVideo);
   console.log(callAccepted, callEnded, userVideo);
-  console.log(callAccepted, callEnded, userVideo);
-  console.log(callAccepted, callEnded, userVideo);
-  console.log(callAccepted, callEnded, userVideo);
 
   return (
     <main>
