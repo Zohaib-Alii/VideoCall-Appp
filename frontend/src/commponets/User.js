@@ -5,11 +5,11 @@ import IconButton from "@material-ui/core/IconButton";
 import PhoneIcon from "@material-ui/icons/Phone";
 
 const User = ({ callAccepted, callEnded, userVideo, leaveCall, callUser }) => {
- 
-
   return (
     <main>
-      <h1 style={{ textAlign: "center", color: "#fff" }}>User calling</h1>
+      <h1 style={{ textAlign: "center", color: "#fff" }}>
+        User calling to another user{" "}
+      </h1>
       <div className="container">
         <div className="video-container">
           <div className="video">
