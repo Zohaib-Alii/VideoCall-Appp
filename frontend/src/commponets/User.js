@@ -8,7 +8,7 @@ const User = ({ callAccepted, callEnded, userVideo, leaveCall, callUser }) => {
   return (
     <main>
       <h1 style={{ textAlign: "center", color: "#fff" }}>
-        User calling to another user{" "}
+        User calling to other caller
       </h1>
       <div className="container">
         <div className="video-container">
